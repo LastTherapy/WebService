@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.dobrocraft.rest_learn.entity.User;
+import lombok.AllArgsConstructor;
 
 @RestController
 public class MainController {
@@ -21,7 +22,7 @@ public class MainController {
 
     @GetMapping("/api/user")
     public String getUser() {
-        User user = new User("Bob", 100);
+        User user = new User("bob", 100);
         String jsonData = null;
         try  {
             jsonData = objectMapper.writeValueAsString(user);
